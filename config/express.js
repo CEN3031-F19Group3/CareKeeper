@@ -46,5 +46,7 @@ module.exports.init = () => {
             res.sendFile(path.join(__dirname +  "/../client/build/index.html"));
         });
 
+    console.log("CHecking environemtn variables from HEROKU: ", process.env.BASEURL);
+
     return app
 }
