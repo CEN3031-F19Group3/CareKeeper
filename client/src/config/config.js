@@ -5,7 +5,7 @@ const inDevelopment = process.env.NODE_ENV === "development";
 const baseURL =
     inDevelopment
         ? `http://localhost:8000`
-        : "https://carekeeper.herokuapp.com/";
+        : "https://carekeeper.herokuapp.com";
 
 export default {
   oidc: {
