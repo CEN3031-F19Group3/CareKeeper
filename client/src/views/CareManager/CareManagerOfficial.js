@@ -24,6 +24,7 @@ const { baseURL } = process.env;
 //function that takes Okta Token and links to Atlas database by email (for now)
 function OktaToAtlas(email) {
     try {
+        console.log("BaseURL",baseURL);
         axios.get(baseURL + '/api/managers/')
             .then(res => {
                 res.data.forEach(m => {
