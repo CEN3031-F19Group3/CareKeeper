@@ -38,7 +38,7 @@ class CaregiverLogArea extends React.Component {
     visit.actualStart = this.state.startTime;
     console.log("actual start", visit.actualStart);
 
-    axios.put('http://localhost:5000/api/visits/' + this.props.visit._id,visit);
+    axios.put('http://localhost:8000/api/visits/' + this.props.visit._id,visit);
 
   }
 
@@ -50,7 +50,7 @@ class CaregiverLogArea extends React.Component {
 
     visit.actualFinish = this.state.endTime;
 
-    axios.put('http://localhost:5000/api/visits/' + this.props.visit._id,visit);
+    axios.put('http://localhost:8000/api/visits/' + this.props.visit._id,visit);
 
   }
 

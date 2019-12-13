@@ -59,7 +59,7 @@ class AddEventsCalendar extends React.Component {
     }
     if(this.props.currentPatient !== prevProps.currentPatient) {
       //get Patient Name
-      axios.get('http://localhost:5000/api/patients/' + this.props.currentPatient)
+      axios.get('http://localhost:8000/api/patients/' + this.props.currentPatient)
         .then(res => {
           this.setState({
             patientName: res.data.nickname
@@ -86,7 +86,7 @@ class AddEventsCalendar extends React.Component {
   }
 
   updateCustomLists(callback) {
-      axios.get('http://localhost:5000/api/managers/'+ this.props.currentManager)
+      axios.get('http://localhost:8000/api/managers/'+ this.props.currentManager)
           .then(res => {
               this.setState({
                   selectList: res.data.customADLs

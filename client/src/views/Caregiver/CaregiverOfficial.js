@@ -15,7 +15,7 @@ import data from '../../dataADL';
 //function that takes Okta Token and links to Atlas database by email (for now)
 function OktaToAtlas(email) {
     try {
-        axios.get('http://localhost:5000/api/caregivers/')
+        axios.get('http://localhost:8000/api/caregivers/')
             .then(res => {
                 res.data.forEach(m => {
                     try {

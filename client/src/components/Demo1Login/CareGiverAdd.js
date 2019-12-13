@@ -7,7 +7,7 @@ class CareGiverAdd extends React.Component {
 							email: this.refs.emailText.value
 						    };
 
-		axios.post('http://localhost:5000/api/caregivers/', careGiver)
+		axios.post('http://localhost:8000/api/caregivers/', careGiver)
 			  .then(res => console.log(res.data));
 			  
 		alert('You are now registered. Please select your name.');

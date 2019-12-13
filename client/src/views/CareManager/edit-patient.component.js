@@ -23,7 +23,7 @@ export default class EditPatient extends Component {
 
   componentDidUpdate(prevProps) {
     if(this.props.currentPatient !== prevProps.currentPatient) {
-      axios.get('http://localhost:5000/api/patients/' + this.props.currentPatient)
+      axios.get('http://localhost:8000/api/patients/' + this.props.currentPatient)
         .then(res =>  {
           this.setState({
             nickname: res.data.nickname,
@@ -70,7 +70,7 @@ export default class EditPatient extends Component {
 
     console.log(patient);
 
-    axios.put('http://localhost:5000/api/patients/' + this.props.currentPatient, patient)
+    axios.put('http://localhost:8000/api/patients/' + this.props.currentPatient, patient)
       .then(res => console.log(res.data));
 
     //window.location = '/';

@@ -16,7 +16,7 @@ class ManagerShowPatients extends React.Component {
 		if (this.props.currentManager) {
 			id = mongoose.Types.ObjectId(this.props.currentManager);
 		}
-		let url = 'http://localhost:5000/api/patients/byManager/' + id
+		let url = 'http://localhost:8000/api/patients/byManager/' + id
 		axios.get(url)
 			.then(res => {
 				const patients = res.data;

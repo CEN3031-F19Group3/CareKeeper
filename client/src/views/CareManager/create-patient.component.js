@@ -55,7 +55,7 @@ export default class CreatePatient extends Component {
 
     console.log(patient);
 
-    axios.post('http://localhost:5000/api/patients', patient)
+    axios.post('http://localhost:8000/api/patients', patient)
       .then(res => {
         console.log(res.data);
         this.props.changeCurrentPatient(res.data._id);

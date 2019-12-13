@@ -22,7 +22,7 @@ import data from "../../dataADL";
 //function that takes Okta Token and links to Atlas database by email (for now)
 function OktaToAtlas(email) {
     try {
-        axios.get('http://localhost:5000/api/managers/')
+        axios.get('http://localhost:8000/api/managers/')
             .then(res => {
                 res.data.forEach(m => {
                     try {
@@ -88,7 +88,7 @@ class CareManagerOfficial extends React.Component {
 
     getVisits() {
         console.log("GET VISITS: ");
-        let url = 'http://localhost:5000/api/visits/byManager/' + this.state.userID;
+        let url = 'http://localhost:8000/api/visits/byManager/' + this.state.userID;
         axios.get(url)
             .then(res => {
                 this.setState({

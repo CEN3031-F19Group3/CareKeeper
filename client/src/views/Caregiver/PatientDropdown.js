@@ -31,7 +31,7 @@ class PatientDropdown extends React.Component {
     let pats = [...new Set(this.state.visits.map(v => v.patient))];
     
     pats.forEach((p,i,arr) => {
-      axios.get('http://localhost:5000/api/patients/' + p)
+      axios.get('http://localhost:8000/api/patients/' + p)
         .then(res => {
           patObjs.push(res.data);
           if(i === (arr.length - 1)) {
@@ -43,7 +43,7 @@ class PatientDropdown extends React.Component {
   };
 
   updateVisits() {
-    let url = 'http://localhost:5000/api/visits/byCaregiver/' + this.props.currentCaregiver;
+    let url = 'http://localhost:8000/api/visits/byCaregiver/' + this.props.currentCaregiver;
     axios.get(url)
         .then(res => {
             this.setState({

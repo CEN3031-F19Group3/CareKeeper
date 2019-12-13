@@ -19,7 +19,7 @@ class TaskLists extends Component {
       console.log("New Select : ", findName);
       console.log("Prev Select : ", prevProps.selectedListName);
 
-      axios.get('http://localhost:5000/api/managers/'+ this.props.currentManager)
+      axios.get('http://localhost:8000/api/managers/'+ this.props.currentManager)
         .then(res => {
           let x = res.data.customADLs.find((item) => {
             return item.name === findName;

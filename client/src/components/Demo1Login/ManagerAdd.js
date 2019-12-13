@@ -7,7 +7,7 @@ class ManagerAdd extends React.Component {
 							email: this.refs.emailText.value,
 							medications: []};
 
-		axios.post('http://localhost:5000/api/managers/', manager)
+		axios.post('http://localhost:8000/api/managers/', manager)
   			.then(res => console.log(res.data));
 		
 		alert('You are now registered. Please select your name.');

@@ -20,7 +20,7 @@ class CaregiverCheckbox extends React.Component {
 
     let visit = this.props.visit;
     visit.caregiverNotes = value;
-    axios.put('http://localhost:5000/api/visits/' + this.props.visit._id,visit);
+    axios.put('http://localhost:8000/api/visits/' + this.props.visit._id,visit);
 
     this.setState({
       [name]: value

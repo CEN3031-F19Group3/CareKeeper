@@ -11,7 +11,7 @@ class ManagerSelect extends React.Component {
 	};
 
 	updateManagerList() {
-		axios.get('http://localhost:5000/api/managers/')
+		axios.get('http://localhost:8000/api/managers/')
 			.then(res => {
 				this.setState({
 					managers: res.data

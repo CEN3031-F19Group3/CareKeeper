@@ -22,11 +22,11 @@ export default class Timesheet extends React.Component {
         
         this.props.visits.forEach((v,i,arr) => {
             //get patient name
-            axios.get('http://localhost:5000/api/patients/' + v.patient)
+            axios.get('http://localhost:8000/api/patients/' + v.patient)
                 .then(res => {
                     newList[i].patientName = res.data.nickname;
                     //get caregiver name
-                    axios.get('http://localhost:5000/api/caregivers/' + v.caregiver)
+                    axios.get('http://localhost:8000/api/caregivers/' + v.caregiver)
                     .then(res2 => {
                         newList[i].caregiverName = res2.data.username;
                     })

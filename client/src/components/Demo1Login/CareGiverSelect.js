@@ -11,7 +11,7 @@ class CareGiverSelect extends React.Component {
 	};
 
 	updateCareGiverList() {
-		axios.get('http://localhost:5000/api/caregivers/')
+		axios.get('http://localhost:8000/api/caregivers/')
 			.then(res => {
 				this.setState({
 					careGivers: res.data
