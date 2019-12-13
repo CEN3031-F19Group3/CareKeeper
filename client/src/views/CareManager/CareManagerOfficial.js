@@ -91,7 +91,7 @@ class CareManagerOfficial extends React.Component {
 
     getVisits() {
         console.log("GET VISITS: ");
-        let url = 'http://localhost:8000/api/visits/byManager/' + this.state.userID;
+        let url = 'https://carekeeper.herokuapp.com/api/visits/byManager/' + this.state.userID;
         axios.get(url)
             .then(res => {
                 this.setState({

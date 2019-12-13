@@ -12,7 +12,7 @@ class PatientSelect extends React.Component {
     };
 
     updatePatientList() {
-        let url = 'http://localhost:8000/api/patients/byManager/' + this.props.currentManager;
+        let url = 'https://carekeeper.herokuapp.com/api/patients/byManager/' + this.props.currentManager;
         axios.get(url)
             .then(res => {
                 this.setState({
@@ -23,7 +23,7 @@ class PatientSelect extends React.Component {
     }
 
     updatePatientList2() {
-        let url = 'http://localhost:8000/api/patients/byManager/' + this.props.currentManager;
+        let url = 'https://carekeeper.herokuapp.com/api/patients/byManager/' + this.props.currentManager;
         axios.get(url)
             .then(res => {
                 this.setState({

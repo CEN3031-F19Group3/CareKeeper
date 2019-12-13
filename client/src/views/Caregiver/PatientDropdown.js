@@ -44,7 +44,7 @@ class PatientDropdown extends React.Component {
   };
 
   updateVisits() {
-    let url = 'http://localhost:8000/api/visits/byCaregiver/' + this.props.currentCaregiver;
+    let url = 'https://carekeeper.herokuapp.com/api/visits/byCaregiver/' + this.props.currentCaregiver;
     axios.get(url)
         .then(res => {
             this.setState({
