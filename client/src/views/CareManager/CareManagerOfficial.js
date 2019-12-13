@@ -19,10 +19,13 @@ import Timesheet from './Timesheet';
 import CaregiverCheckboxArea from "../Caregiver/CaregiverCheckboxArea";
 import data from "../../dataADL";
 
+require("dotenv").config()
+const baseURL = process.env.baseURL || 'http://localhost:8000';
+
 //function that takes Okta Token and links to Atlas database by email (for now)
 function OktaToAtlas(email) {
     try {
-        axios.get('http://localhost:8000/api/managers/')
+        axios.get(baseURL + '/api/managers/')
             .then(res => {
                 res.data.forEach(m => {
                     try {
@@ -88,7 +91,7 @@ class CareManagerOfficial extends React.Component {
 
     getVisits() {
         console.log("GET VISITS: ");
-        let url = 'http://localhost:8000/api/visits/byManager/' + this.state.userID;
+        let url = baseURL + '/api/visits/byManager/' + this.state.userID;
         axios.get(url)
             .then(res => {
                 this.setState({

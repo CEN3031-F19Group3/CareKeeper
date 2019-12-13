@@ -32,18 +32,18 @@ module.exports.init = () => {
     // body parsing middleware
     app.use(bodyParser.json());
 
+     // Serve any static files
+     app.use(express.static(path.join(__dirname, "../client/build")));
+
     // add a router
     app.use('/api/patients', patientsRouter);
     app.use('/api/managers', managersRouter);
     app.use('/api/caregivers', caregiversRouter);
     app.use('/api/visits', visitsRouter);
 
-        // Serve any static files
-        app.use(express.static(path.join(__dirname, "../client/build")));
-
         // Handle React routing, return all requests to React app
         app.get('*', function(req, res) {
-            res.sendFile(path.join(__dirname, "../client", "build", "index.html"));
+            res.sendFile(path.join(__dirname +  "/../client/build/index.html"));
         });
 
     return app
