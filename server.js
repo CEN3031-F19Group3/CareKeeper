@@ -1,4 +1,5 @@
 const express = require('./config/express.js')
+require("dotenv").config()
 //const OktaJwtVerifier = require('@okta/jwt-verifier');
 //var cors = require('cors');
 //const config = require('./config/config.js');
