@@ -54,3 +54,8 @@ yarn-error.log*
 
 # User-specific stuff
 .idea/*
+
+# Asked to remove by: https://coursework.vschool.io/deploying-mern-with-heroku/#getyourexpressapptoserveupyourreactapp
+*.orig
+.idea/
+.vscode/

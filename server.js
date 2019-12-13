@@ -79,6 +79,19 @@ app.get('/api/messages', authenticationRequired, (req, res) => {
 });
 */
 
+
+//ADDING CODE FROM:
+//     https://coursework.vschool.io/deploying-mern-with-heroku/#getyourexpressapptoserveupyourreactapp
+
+// ... other imports
+//const path = require("path")
+//const pathComp = require("express-static");
+
+
+
+
+
+
 // Use env port or default
 // let port = process.env.PORT || 5000;
 

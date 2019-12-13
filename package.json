@@ -8,10 +8,11 @@
     "install-all": "concurrently \"npm install\" \"cd client && npm install\"",
     "client": "cd client && npm start",
     "server": "nodemon server/server.js",
-    "dev": "concurrently \"nodemon server/server.js\" \"cd client && npm run start\"",
+    "dev": "concurrently \"nodemon server.js\" \"cd client && npm run start\"",
     "build": "cd client && npm install",
-    "start": "node server/server.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
+    "heroku-postbuild_OLD": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "concurrently": "^4.1.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-static": "^1.2.6",
     "googleapis": "^39.2.0",
     "jquery": "^3.4.1",
     "json2csv": "^4.5.4",
