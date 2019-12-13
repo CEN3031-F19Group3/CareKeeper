@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
+const { baseURL } = process.env;
+
 export default class EditPatient extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +25,7 @@ export default class EditPatient extends Component {
 
   componentDidUpdate(prevProps) {
     if(this.props.currentPatient !== prevProps.currentPatient) {
-      axios.get('http://localhost:8000/api/patients/' + this.props.currentPatient)
+      axios.get(baseURL + '/api/patients/' + this.props.currentPatient)
         .then(res =>  {
           this.setState({
             nickname: res.data.nickname,
@@ -70,7 +72,7 @@ export default class EditPatient extends Component {
 
     console.log(patient);
 
-    axios.put('http://localhost:8000/api/patients/' + this.props.currentPatient, patient)
+    axios.put(baseURL + '/api/patients/' + this.props.currentPatient, patient)
       .then(res => console.log(res.data));
 
     //window.location = '/';

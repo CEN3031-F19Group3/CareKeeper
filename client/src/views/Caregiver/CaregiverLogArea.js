@@ -1,6 +1,7 @@
 import React from 'react';
 import {FormGroup, Input, Label} from "reactstrap";
 import axios from "axios";
+const { baseURL } = process.env;
 
 class CaregiverLogArea extends React.Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class CaregiverLogArea extends React.Component {
     visit.actualStart = this.state.startTime;
     console.log("actual start", visit.actualStart);
 
-    axios.put('http://localhost:8000/api/visits/' + this.props.visit._id,visit);
+    axios.put(baseURL + '/api/visits/' + this.props.visit._id,visit);
 
   }
 
@@ -50,7 +51,7 @@ class CaregiverLogArea extends React.Component {
 
     visit.actualFinish = this.state.endTime;
 
-    axios.put('http://localhost:8000/api/visits/' + this.props.visit._id,visit);
+    axios.put(baseURL + '/api/visits/' + this.props.visit._id,visit);
 
   }
 

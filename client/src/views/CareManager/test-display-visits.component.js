@@ -2,6 +2,8 @@ import React from 'react';
 import axios from "axios";
 import CSVExport from "../../components/CSVExport";
 
+const { baseURL } = process.env;
+
 
 export default class TestDisplayVisits extends React.Component {
     constructor(props) {
@@ -40,11 +42,11 @@ export default class TestDisplayVisits extends React.Component {
         
         patsOnly.forEach((v,i,arr) => {
             //get patient name
-            axios.get('http://localhost:8000/api/patients/' + v.patient)
+            axios.get(baseURL + '/api/patients/' + v.patient)
                 .then(res => {
                     newList[i].patientName = res.data.nickname;
                     //get caregiver name
-                    axios.get('http://localhost:8000/api/caregivers/' + v.caregiver)
+                    axios.get(baseURL + '/api/caregivers/' + v.caregiver)
                     .then(res2 => {
                         newList[i].caregiverName = res2.data.username;
                     })

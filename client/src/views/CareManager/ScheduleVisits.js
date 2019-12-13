@@ -3,6 +3,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
 import CareGiverSelect from '../../components/Demo1Login/CareGiverSelect';
 import axios from "axios";
+const { baseURL } = process.env;
 
 
 export default class ScheduleVisits extends React.Component {
@@ -52,7 +53,7 @@ export default class ScheduleVisits extends React.Component {
       }
       console.log(visit.ADLlist);
 
-      axios.post('http://localhost:8000/api/visits/', visit)
+      axios.post(baseURL + '/api/visits/', visit)
         .then(res => {
           console.log("Visit Saved: ", res.data);
           alert("Your visit has been scheduled.");
@@ -74,7 +75,7 @@ export default class ScheduleVisits extends React.Component {
       }
       if(this.props.currentPatient !== prevProps.currentPatient) {
         //get Patient Name
-        axios.get('http://localhost:8000/api/patients/' + this.props.currentPatient)
+        axios.get(baseURL + '/api/patients/' + this.props.currentPatient)
           .then(res => {
             this.setState({
               patientName: res.data.nickname
@@ -101,7 +102,7 @@ export default class ScheduleVisits extends React.Component {
     }
 
     updateCustomLists(callback) {
-        axios.get('http://localhost:8000/api/managers/'+ this.props.currentManager)
+        axios.get(baseURL + '/api/managers/'+ this.props.currentManager)
             .then(res => {
                 this.setState({
                     selectList: res.data.customADLs

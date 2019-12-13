@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import SelectFrom from './selectFrom.component';
 import SelectedTasks from './selectedTasks.component';
 import axios from 'axios';
+const { baseURL } = process.env;
 
 
 class TaskLists extends Component {
@@ -19,7 +20,7 @@ class TaskLists extends Component {
       console.log("New Select : ", findName);
       console.log("Prev Select : ", prevProps.selectedListName);
 
-      axios.get('http://localhost:8000/api/managers/'+ this.props.currentManager)
+      axios.get(baseURL + '/api/managers/'+ this.props.currentManager)
         .then(res => {
           let x = res.data.customADLs.find((item) => {
             return item.name === findName;

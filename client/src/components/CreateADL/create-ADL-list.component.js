@@ -3,7 +3,9 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import dataADL from '../../dataADL';
 
-import TaskLists from './TaskLists.component'
+import TaskLists from './TaskLists.component';
+
+const { baseURL } = process.env;
 
 export default class CreateADL extends Component {
   constructor(props) {
@@ -42,7 +44,7 @@ export default class CreateADL extends Component {
   }
 
   updateCustomLists(callback) {
-    axios.get('http://localhost:8000/api/managers/'+ this.state.careManagerID)
+    axios.get(baseURL + '/api/managers/'+ this.state.careManagerID)
       .then(res => {
         this.setState({
           selectList: res.data.customADLs
@@ -85,7 +87,7 @@ export default class CreateADL extends Component {
       }
 
       //Pass current manager here. When logged in, manager id will be this.props.managerID
-      axios.put('http://localhost:8000/api/managers/'+ this.state.careManagerID, newww)
+      axios.put(baseURL + '/api/managers/'+ this.state.careManagerID, newww)
         .then(res => {
           console.log(res.data);
           this.updateCustomLists(() => { //add new list to dropdown
@@ -114,7 +116,7 @@ export default class CreateADL extends Component {
       }
 
       //Pass current manager here. When logged in, manager id will be this.props.managerID
-      axios.put('http://localhost:8000/api/managers/'+ this.state.careManagerID, newww)
+      axios.put(baseURL + '/api/managers/'+ this.state.careManagerID, newww)
         .then(res => {
           console.log(res.data);
           this.updateCustomLists();

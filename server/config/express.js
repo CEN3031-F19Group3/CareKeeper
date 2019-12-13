@@ -38,7 +38,7 @@ module.exports.init = () => {
     app.use('/api/caregivers', caregiversRouter);
     app.use('/api/visits', visitsRouter);
 
-    if (true) {
+    if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development') {
         // Serve any static files
         app.use(express.static(path.join(__dirname, '../../client/build')));
 

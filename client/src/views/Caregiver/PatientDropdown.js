@@ -2,6 +2,7 @@
 
 import React from 'react';
 import axios from 'axios';
+const { baseURL } = process.env;
 
 class PatientDropdown extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class PatientDropdown extends React.Component {
     let pats = [...new Set(this.state.visits.map(v => v.patient))];
     
     pats.forEach((p,i,arr) => {
-      axios.get('http://localhost:8000/api/patients/' + p)
+      axios.get(baseURL + '/api/patients/' + p)
         .then(res => {
           patObjs.push(res.data);
           if(i === (arr.length - 1)) {

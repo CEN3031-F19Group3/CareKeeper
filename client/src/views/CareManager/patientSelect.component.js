@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+const { baseURL } = process.env;
 
 class PatientSelect extends React.Component {
     state = {

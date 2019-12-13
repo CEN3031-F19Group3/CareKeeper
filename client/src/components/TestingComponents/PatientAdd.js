@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+const { baseURL } = process.env;
 
 class PatientAdd extends React.Component {
 	addPatient() {
@@ -7,7 +8,7 @@ class PatientAdd extends React.Component {
 							careManager: this.props.currentManager,
 							medications: []};
 
-		axios.post('http://localhost:8000/api/patients/', patient)
+		axios.post(baseURL + '/api/patients/', patient)
   .then(res => console.log(res.data));
 	}
 

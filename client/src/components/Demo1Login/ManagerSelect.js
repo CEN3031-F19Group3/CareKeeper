@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+const { baseURL } = process.env;
 
 class ManagerSelect extends React.Component {
 	state = {
@@ -11,7 +12,7 @@ class ManagerSelect extends React.Component {
 	};
 
 	updateManagerList() {
-		axios.get('http://localhost:8000/api/managers/')
+		axios.get(baseURL + '/api/managers/')
 			.then(res => {
 				this.setState({
 					managers: res.data

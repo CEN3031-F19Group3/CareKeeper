@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+const { baseURL } = process.env;
 
 class CareGiverSelect extends React.Component {
 	state = {
@@ -11,7 +12,7 @@ class CareGiverSelect extends React.Component {
 	};
 
 	updateCareGiverList() {
-		axios.get('http://localhost:8000/api/caregivers/')
+		axios.get(baseURL + '/api/caregivers/')
 			.then(res => {
 				this.setState({
 					careGivers: res.data

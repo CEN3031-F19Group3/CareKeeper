@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+const { baseURL } = process.env;
 
 class TaskList extends React.Component {
 
@@ -17,7 +18,7 @@ class TaskList extends React.Component {
 
     var visit = this.props.visit;
     visit.ADLlist.result = results;
-    axios.put('http://localhost:8000/api/visits/' + this.props.visit._id,visit);
+    axios.put(baseURL + '/api/visits/' + this.props.visit._id,visit);
     this.forceUpdate();
 
   }

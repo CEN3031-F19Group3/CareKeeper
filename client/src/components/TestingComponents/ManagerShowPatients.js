@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+const { baseURL } = process.env;
 var mongoose = require('mongoose');
 
 class ManagerShowPatients extends React.Component {

@@ -19,10 +19,12 @@ import Timesheet from './Timesheet';
 import CaregiverCheckboxArea from "../Caregiver/CaregiverCheckboxArea";
 import data from "../../dataADL";
 
+const { baseURL } = process.env;
+
 //function that takes Okta Token and links to Atlas database by email (for now)
 function OktaToAtlas(email) {
     try {
-        axios.get('http://localhost:8000/api/managers/')
+        axios.get(baseURL + '/api/managers/')
             .then(res => {
                 res.data.forEach(m => {
                     try {

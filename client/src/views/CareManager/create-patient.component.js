@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
+
+const { baseURL } = process.env;
+
 export default class CreatePatient extends Component {
   constructor(props) {
     super(props);
@@ -55,7 +58,7 @@ export default class CreatePatient extends Component {
 
     console.log(patient);
 
-    axios.post('http://localhost:8000/api/patients', patient)
+    axios.post(baseURL + '/api/patients', patient)
       .then(res => {
         console.log(res.data);
         this.props.changeCurrentPatient(res.data._id);

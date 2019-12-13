@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+const { baseURL } = process.env;
 
 class ManagerAdd extends React.Component {
 	addManager() {
@@ -7,7 +8,7 @@ class ManagerAdd extends React.Component {
 							email: this.refs.emailText.value,
 							medications: []};
 
-		axios.post('http://localhost:8000/api/managers/', manager)
+		axios.post(baseURL + '/api/managers/', manager)
   			.then(res => console.log(res.data));
 		
 		alert('You are now registered. Please select your name.');

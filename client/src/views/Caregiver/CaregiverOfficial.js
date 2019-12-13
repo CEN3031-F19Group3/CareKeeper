@@ -1,7 +1,6 @@
 import React from 'react';
 import { withAuth } from '@okta/okta-react';
 import axios from 'axios';
-
 import PatientDropdown from './PatientDropdown.js';
 import CaregiverLogArea from './CaregiverLogArea.js';
 import RecentLogs from './RecentLogs.js'
@@ -11,11 +10,13 @@ import CalendarArea from './CalendarArea.js'
 import '../../stylesheets/Caregiver.css';
 import data from '../../dataADL';
 
+const { baseURL } = process.env;
+
 
 //function that takes Okta Token and links to Atlas database by email (for now)
 function OktaToAtlas(email) {
     try {
-        axios.get('http://localhost:8000/api/caregivers/')
+        axios.get(baseURL + '/api/caregivers/')
             .then(res => {
                 res.data.forEach(m => {
                     try {
