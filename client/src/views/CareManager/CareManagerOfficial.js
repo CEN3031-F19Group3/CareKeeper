@@ -20,7 +20,7 @@ import CaregiverCheckboxArea from "../Caregiver/CaregiverCheckboxArea";
 import data from "../../dataADL";
 
 require("dotenv").config()
-const baseURL = process.env.baseURL || 'http://localhost:8000';
+const baseURL = process.env.BASEURL || 'http://localhost:8000';
 
 //function that takes Okta Token and links to Atlas database by email (for now)
 function OktaToAtlas(email) {
