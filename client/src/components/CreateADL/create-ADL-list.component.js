@@ -44,7 +44,7 @@ export default class CreateADL extends Component {
   }
 
   updateCustomLists(callback) {
-    axios.get(baseURL + '/api/managers/'+ this.state.careManagerID)
+    axios.get('https://carekeeper.herokuapp.com/api/managers/'+ this.state.careManagerID)
       .then(res => {
         this.setState({
           selectList: res.data.customADLs
@@ -87,7 +87,7 @@ export default class CreateADL extends Component {
       }
 
       //Pass current manager here. When logged in, manager id will be this.props.managerID
-      axios.put(baseURL + '/api/managers/'+ this.state.careManagerID, newww)
+      axios.put('https://carekeeper.herokuapp.com/api/managers/'+ this.state.careManagerID, newww)
         .then(res => {
           console.log(res.data);
           this.updateCustomLists(() => { //add new list to dropdown
@@ -116,7 +116,7 @@ export default class CreateADL extends Component {
       }
 
       //Pass current manager here. When logged in, manager id will be this.props.managerID
-      axios.put(baseURL + '/api/managers/'+ this.state.careManagerID, newww)
+      axios.put('https://carekeeper.herokuapp.com/api/managers/'+ this.state.careManagerID, newww)
         .then(res => {
           console.log(res.data);
           this.updateCustomLists();

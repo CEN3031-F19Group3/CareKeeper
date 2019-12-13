@@ -58,7 +58,7 @@ export default class CreatePatient extends Component {
 
     console.log(patient);
 
-    axios.post(baseURL + '/api/patients', patient)
+    axios.post('https://carekeeper.herokuapp.com/api/patients', patient)
       .then(res => {
         console.log(res.data);
         this.props.changeCurrentPatient(res.data._id);

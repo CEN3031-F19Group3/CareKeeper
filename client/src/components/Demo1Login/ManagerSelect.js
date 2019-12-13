@@ -12,7 +12,7 @@ class ManagerSelect extends React.Component {
 	};
 
 	updateManagerList() {
-		axios.get(baseURL + '/api/managers/')
+		axios.get('https://carekeeper.herokuapp.com/api/managers/')
 			.then(res => {
 				this.setState({
 					managers: res.data

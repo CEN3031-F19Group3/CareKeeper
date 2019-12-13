@@ -18,14 +18,14 @@ import TestDisplayVisits from './test-display-visits.component';
 import Timesheet from './Timesheet';
 import CaregiverCheckboxArea from "../Caregiver/CaregiverCheckboxArea";
 import data from "../../dataADL";
-
-const { baseURL } = process.env;
+import config from '../../config/config';
+const baseURL = config.baseURL;
 
 //function that takes Okta Token and links to Atlas database by email (for now)
 function OktaToAtlas(email) {
     try {
         console.log("BaseURL",baseURL);
-        axios.get(baseURL + '/api/managers/')
+        axios.get('https://carekeeper.herokuapp.com/api/managers/')
             .then(res => {
                 res.data.forEach(m => {
                     try {

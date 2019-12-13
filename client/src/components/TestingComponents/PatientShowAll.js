@@ -10,7 +10,7 @@ class PatientShowAll extends React.Component {
 	render() {
 		//You will need to save the value from the textbox and update it as it changes
 		//You will need the onChange value for the input tag to capture the textbox value
-		axios.get(baseURL + '/api/patients/')
+		axios.get('https://carekeeper.herokuapp.com/api/patients/')
 			.then(res => {
 				const patients = res.data;
 				this.setState({patients});

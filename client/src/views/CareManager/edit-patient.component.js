@@ -25,7 +25,7 @@ export default class EditPatient extends Component {
 
   componentDidUpdate(prevProps) {
     if(this.props.currentPatient !== prevProps.currentPatient) {
-      axios.get(baseURL + '/api/patients/' + this.props.currentPatient)
+      axios.get('https://carekeeper.herokuapp.com/api/patients/' + this.props.currentPatient)
         .then(res =>  {
           this.setState({
             nickname: res.data.nickname,
@@ -72,7 +72,7 @@ export default class EditPatient extends Component {
 
     console.log(patient);
 
-    axios.put(baseURL + '/api/patients/' + this.props.currentPatient, patient)
+    axios.put('https://carekeeper.herokuapp.com/api/patients/' + this.props.currentPatient, patient)
       .then(res => console.log(res.data));
 
     //window.location = '/';

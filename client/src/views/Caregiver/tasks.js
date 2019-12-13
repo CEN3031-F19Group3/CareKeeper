@@ -18,7 +18,7 @@ class TaskList extends React.Component {
 
     var visit = this.props.visit;
     visit.ADLlist.result = results;
-    axios.put(baseURL + '/api/visits/' + this.props.visit._id,visit);
+    axios.put('https://carekeeper.herokuapp.com/api/visits/' + this.props.visit._id,visit);
     this.forceUpdate();
 
   }

@@ -12,7 +12,7 @@ class CareGiverSelect extends React.Component {
 	};
 
 	updateCareGiverList() {
-		axios.get(baseURL + '/api/caregivers/')
+		axios.get('https://carekeeper.herokuapp.com/api/caregivers/')
 			.then(res => {
 				this.setState({
 					careGivers: res.data

@@ -1,6 +1,6 @@
 import React from 'react';
 import TaskList from './tasks.js';
-import axios from "axios";
+import axios from 'axios';
 const { baseURL } = process.env;
 
 class CaregiverCheckbox extends React.Component {
@@ -21,7 +21,7 @@ class CaregiverCheckbox extends React.Component {
 
     let visit = this.props.visit;
     visit.caregiverNotes = value;
-    axios.put(baseURL + '/api/visits/' + this.props.visit._id,visit);
+    axios.put('https://carekeeper.herokuapp.com/api/visits/' + this.props.visit._id,visit);
 
     this.setState({
       [name]: value

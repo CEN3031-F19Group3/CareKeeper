@@ -32,7 +32,7 @@ class PatientDropdown extends React.Component {
     let pats = [...new Set(this.state.visits.map(v => v.patient))];
     
     pats.forEach((p,i,arr) => {
-      axios.get(baseURL + '/api/patients/' + p)
+      axios.get('https://carekeeper.herokuapp.com/api/patients/' + p)
         .then(res => {
           patObjs.push(res.data);
           if(i === (arr.length - 1)) {

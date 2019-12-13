@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-const { baseURL } = process.env;
+
+import config from '../../config/config'
+const { baseURL } = config;
 
 class PatientAdd extends React.Component {
 	addPatient() {
@@ -8,7 +10,7 @@ class PatientAdd extends React.Component {
 							careManager: this.props.currentManager,
 							medications: []};
 
-		axios.post(baseURL + '/api/patients/', patient)
+		axios.post('https://carekeeper.herokuapp.com/api/patients/', patient)
   .then(res => console.log(res.data));
 	}
 

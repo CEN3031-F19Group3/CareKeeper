@@ -8,7 +8,7 @@ class ManagerAdd extends React.Component {
 							email: this.refs.emailText.value,
 							medications: []};
 
-		axios.post(baseURL + '/api/managers/', manager)
+		axios.post('https://carekeeper.herokuapp.com/api/managers/', manager)
   			.then(res => console.log(res.data));
 		
 		alert('You are now registered. Please select your name.');

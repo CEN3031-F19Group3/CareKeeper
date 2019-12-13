@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from "axios";
+import axios from 'axios';
 import CSVExport from "../../components/CSVExport";
 
 const { baseURL } = process.env;
@@ -42,11 +42,11 @@ export default class TestDisplayVisits extends React.Component {
         
         patsOnly.forEach((v,i,arr) => {
             //get patient name
-            axios.get(baseURL + '/api/patients/' + v.patient)
+            axios.get('https://carekeeper.herokuapp.com/api/patients/' + v.patient)
                 .then(res => {
                     newList[i].patientName = res.data.nickname;
                     //get caregiver name
-                    axios.get(baseURL + '/api/caregivers/' + v.caregiver)
+                    axios.get('https://carekeeper.herokuapp.com/api/caregivers/' + v.caregiver)
                     .then(res2 => {
                         newList[i].caregiverName = res2.data.username;
                     })

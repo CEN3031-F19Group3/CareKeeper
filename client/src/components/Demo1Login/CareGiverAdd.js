@@ -8,7 +8,7 @@ class CareGiverAdd extends React.Component {
 							email: this.refs.emailText.value
 						    };
 
-		axios.post(baseURL + '/api/caregivers/', careGiver)
+		axios.post('https://carekeeper.herokuapp.com/api/caregivers/', careGiver)
 			  .then(res => console.log(res.data));
 			  
 		alert('You are now registered. Please select your name.');

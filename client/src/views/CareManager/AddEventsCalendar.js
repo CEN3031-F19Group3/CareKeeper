@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Badge, Form, FormGroup, Label, Input } from 'reactstrap';
-import axios from "axios";
+import axios from 'axios';
 const { baseURL } = process.env;
 
 
@@ -60,7 +60,7 @@ class AddEventsCalendar extends React.Component {
     }
     if(this.props.currentPatient !== prevProps.currentPatient) {
       //get Patient Name
-      axios.get(baseURL + '/api/patients/' + this.props.currentPatient)
+      axios.get('https://carekeeper.herokuapp.com/api/patients/' + this.props.currentPatient)
         .then(res => {
           this.setState({
             patientName: res.data.nickname
@@ -87,7 +87,7 @@ class AddEventsCalendar extends React.Component {
   }
 
   updateCustomLists(callback) {
-      axios.get(baseURL + '/api/managers/'+ this.props.currentManager)
+      axios.get('https://carekeeper.herokuapp.com/api/managers/'+ this.props.currentManager)
           .then(res => {
               this.setState({
                   selectList: res.data.customADLs

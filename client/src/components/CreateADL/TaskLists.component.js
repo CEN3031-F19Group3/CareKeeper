@@ -20,7 +20,7 @@ class TaskLists extends Component {
       console.log("New Select : ", findName);
       console.log("Prev Select : ", prevProps.selectedListName);
 
-      axios.get(baseURL + '/api/managers/'+ this.props.currentManager)
+      axios.get('https://carekeeper.herokuapp.com/api/managers/'+ this.props.currentManager)
         .then(res => {
           let x = res.data.customADLs.find((item) => {
             return item.name === findName;
